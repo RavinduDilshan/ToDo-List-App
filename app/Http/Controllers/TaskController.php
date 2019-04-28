@@ -29,4 +29,14 @@ class TaskController extends Controller
 
 
     }
+
+    public function updateTaskAsCompleted($id){
+        $task=Tasks::find($id);
+
+        $task->isCompleted=1;
+        $task->save();
+        return redirect()->back();
+
+
+    }
 }
